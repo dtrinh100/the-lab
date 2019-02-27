@@ -1,31 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "BogleWeb Regular", Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
+h1,
+h2,
+h3 {
+  font-family: "BogleWeb Bold", Arial, sans-serif;
   font-weight: bold;
-  color: #2c3e50;
+  font-style: normal;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+@font-face {
+  font-family: "BogleWeb Black";
+  src: url("./assets/fonts/BogleWeb-Black.woff2");
+}
+@font-face {
+  font-family: "BogleWeb Bold";
+  src: url("./assets/fonts/BogleWeb-Bold.woff2");
+}
+@font-face {
+  font-family: "BogleWeb Regular";
+  src: url("./assets/fonts/BogleWeb-Regular.woff2");
 }
 </style>

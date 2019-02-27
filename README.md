@@ -1,4 +1,6 @@
-# walmart-labs
+# the-labs
+
+The Labs is an application that features three of Walmart's APIs. It allows the user to search for a product and get recommendations based on the product.
 
 ## Project setup
 ```
@@ -23,11 +25,6 @@ npm run test
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
 ```
 
 ### Customize configuration
