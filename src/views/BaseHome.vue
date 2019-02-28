@@ -2,22 +2,20 @@
   <main class="labs-homepage" role="img" aria-label="Picture of a toy">
     <div class="search-container">
       <h1 class="search-container__header">Search The Labs</h1>
-      <div class="search-bar">
-        <input
-          class="search-bar__input"
-          type="search"
-          placeholder="Search for a product"
-          autofocus
-        />
-        <button class="search-bar__button" type="submit">
-          <font-awesome-icon icon="search" size="2x" />
-        </button>
-      </div>
+      <ProductSearch />
     </div>
   </main>
 </template>
 
-<script></script>
+<script>
+import ProductSearch from "@/components/ProductSearch";
+export default {
+  name: "BaseHome",
+  components: {
+    ProductSearch
+  }
+};
+</script>
 <style scoped>
 .labs-homepage {
   background: url(../assets/img/home-bg.png) no-repeat center center fixed;
@@ -39,25 +37,5 @@
 }
 .search-container__header {
   margin-top: 0;
-}
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-.search-bar__input {
-  height: 3.2rem;
-  width: 20rem;
-  padding-left: 0.5rem;
-  font-size: 1.2rem;
-}
-.search-bar__button {
-  height: 3.3rem;
-  width: 3.3rem;
-  cursor: pointer;
-  background-color: #003087;
-  border: none;
-}
-.search-bar__button svg {
-  color: white;
 }
 </style>
