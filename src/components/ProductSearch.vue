@@ -1,8 +1,10 @@
 <template>
   <div class="search-bar">
     <input
+      ref="input"
       :value="keyword"
       @input="updateParams"
+      @keyup.enter="handleSubmit"
       class="search-bar__input"
       type="search"
       placeholder="Search for an event"
@@ -19,6 +21,18 @@ import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "ProductSearch",
+  mounted: function() {
+    if (this.reset) {
+      this.$refs.input.setAttribute("value", "");
+    }
+  },
+  props: {
+    // If reset is true, reset the input value
+    reset: {
+      type: Boolean,
+      default: false
+    }
+  },
   computed: {
     // Mapping our states based off of the Search store
     ...mapState({

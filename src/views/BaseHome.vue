@@ -2,7 +2,7 @@
   <main class="labs-homepage" role="img" aria-label="Picture of a toy">
     <div class="search-container">
       <h1 class="search-container__header">Search The Labs</h1>
-      <ProductSearch />
+      <ProductSearch :reset="true" />
     </div>
   </main>
 </template>
