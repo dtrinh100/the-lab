@@ -4,7 +4,8 @@ import BaseEvents from "@/models/BaseEvents";
 const state = {
   results: [],
   keyword: "",
-  size: 10
+  size: 10,
+  loading: true
 };
 
 const mutations = {
@@ -14,7 +15,6 @@ const mutations = {
       event.populate(result);
       state.results.push(event);
     });
-    console.log(state.results);
   },
   SET_KEYWORD(state, payload) {
     state.keyword = payload;
@@ -33,7 +33,7 @@ const actions = {
       })
       .catch(error => console.log(error))
       .finally(() => {
-        this.loading = false;
+        state.loading = false;
       });
   },
   getKeyword(context, payload) {

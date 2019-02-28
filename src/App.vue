@@ -3,6 +3,9 @@
 </template>
 
 <style>
+:root {
+  --secondary-color: #003087;
+}
 html,
 body {
   height: 100%;

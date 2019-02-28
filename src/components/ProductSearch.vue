@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "ProductSearch",
@@ -36,15 +36,12 @@ export default {
   computed: {
     // Mapping our states based off of the Search store
     ...mapState({
-      keyword: state => state.search.keyword,
-      results: state => state.search.results
+      keyword: state => state.search.keyword
     })
   },
   methods: {
     ...mapMutations("search", ["SET_KEYWORD"]),
-    ...mapActions("search", ["getKeyword", "getSearch"]),
     handleSubmit: async function() {
-      await this.getSearch(this.keyword);
       this.$router.push({ path: "about", query: { keyword: this.keyword } });
     },
     updateParams: function(ev) {
@@ -68,7 +65,7 @@ export default {
   height: 3.3rem;
   width: 3.3rem;
   cursor: pointer;
-  background-color: #003087;
+  background-color: var(--secondary-color);
   border: none;
 }
 .search-bar__button svg {
