@@ -28,7 +28,7 @@ export default {
 .search-container {
   background-color: rgba(255, 194, 32, 0.9);
   height: 15rem;
-  width: 40rem;
+  width: 19rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,5 +37,11 @@ export default {
 }
 .search-container__header {
   margin-top: 0;
+}
+
+@media only screen and (min-width: 650px) {
+  .search-container {
+    width: 40rem;
+  }
 }
 </style>

@@ -41,13 +41,13 @@ export default {
         size: this.size
       };
 
-      const results = await this.fetchResults(params).catch(e => {
+      await this.fetchResults(params).catch(e => {
         this.loading = false;
         this.error = true;
         console.log(e);
       });
 
-      if (results.length < 1) {
+      if (this.results.length < 1) {
         this.noResults = true;
       }
 

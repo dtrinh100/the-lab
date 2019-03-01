@@ -9,9 +9,9 @@
       type="search"
       placeholder="Search for an event"
       autofocus
-    />
+    >
     <button @click="handleSubmit" class="search-bar__button" type="submit">
-      <font-awesome-icon icon="search" size="2x" />
+      <font-awesome-icon icon="search" size="2x"/>
     </button>
   </div>
 </template>
@@ -56,13 +56,13 @@ export default {
   align-items: center;
 }
 .search-bar__input {
-  height: 3.2rem;
-  width: 20rem;
+  height: 2.5rem;
+  width: 12rem;
   padding-left: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .search-bar__button {
-  height: 3.3rem;
+  height: 2.5rem;
   width: 3.3rem;
   cursor: pointer;
   background-color: var(--secondary-color);
@@ -70,5 +70,16 @@ export default {
 }
 .search-bar__button svg {
   color: white;
+}
+
+@media only screen and (min-width: 650px) {
+  .search-bar__input {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.2rem;
+  }
+  .search-bar__button {
+    height: 3.3rem;
+  }
 }
 </style>
