@@ -21,9 +21,9 @@ const mutations = {
 
 const actions = {
   async fetchResults(context, params) {
-    return new Promise(async resolve => {
+    return new Promise(async (resolve, reject) => {
       const results = await SearchAPI.getSearch(params).catch(error => {
-        throw Error(error);
+        reject(error);
       });
       if (results._embedded) {
         const events = results._embedded.events;
