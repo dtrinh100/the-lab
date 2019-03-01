@@ -9,9 +9,9 @@
       type="search"
       placeholder="Search for an event"
       autofocus
-    >
+    />
     <button @click="handleSubmit" class="search-bar__button" type="submit">
-      <font-awesome-icon icon="search" size="2x"/>
+      <font-awesome-icon icon="search" size="2x" />
     </button>
   </div>
 </template>
@@ -72,7 +72,7 @@ export default {
   color: white;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 660px) {
   .search-bar__input {
     width: 20rem;
     height: 3.2rem;

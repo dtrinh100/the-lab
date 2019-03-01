@@ -18,7 +18,8 @@ export default {
 </script>
 <style scoped>
 .labs-homepage {
-  background: url(../assets/img/home-bg.png) no-repeat center center fixed;
+  background: url(../assets/img/home-mobile-bg.jpg) no-repeat center center
+    fixed;
   background-size: cover;
   display: grid;
   height: 100%;
@@ -39,7 +40,11 @@ export default {
   margin-top: 0;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 660px) {
+  .labs-homepage {
+    background: url(../assets/img/home-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
   .search-container {
     width: 40rem;
   }
