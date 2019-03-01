@@ -73,12 +73,17 @@ describe("ProductSearch", () => {
       const input = wrapper.find("input");
       input.element.value = "testing";
       input.trigger("input");
+
       expect(actions.getKeyword).toHaveBeenCalled();
     });
     it("should push you to a new route when you click the button", () => {
       const button = wrapper.find("button");
       button.trigger("click");
-      expect(pushSpy).toBeCalledWith({ path: "about", query: { keyword: "" } });
+
+      expect(pushSpy).toBeCalledWith({
+        path: "search",
+        query: { keyword: "" }
+      });
     });
     it("should clear the value when the reset prop is set to true", () => {
       const input = wrapper.find("input");

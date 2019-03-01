@@ -42,7 +42,7 @@ export default {
   methods: {
     ...mapActions("search", ["getKeyword"]),
     handleSubmit: function() {
-      this.$router.push({ path: "about", query: { keyword: this.keyword } });
+      this.$router.push({ path: "search", query: { keyword: this.keyword } });
     },
     updateParams: function(ev) {
       this.getKeyword(ev.target.value);
