@@ -4,8 +4,7 @@ import BaseEvents from "@/models/BaseEvents";
 const state = {
   results: [],
   keyword: "",
-  size: 10,
-  loading: true
+  size: 10
 };
 
 const mutations = {
@@ -22,19 +21,12 @@ const mutations = {
 };
 
 const actions = {
-  getSearch(context) {
-    const params = {
-      keyword: state.keyword,
-      size: state.size
-    };
-    return SearchAPI.getSearch(params)
-      .then(results => {
-        context.commit("SET_RESULTS", results._embedded.events);
-      })
-      .catch(error => console.log(error))
-      .finally(() => {
-        state.loading = false;
-      });
+  async fetchResults(context, params) {
+    const results = await SearchAPI.getSearch(params).catch(error => {
+      throw Error(error);
+    });
+    const events = results._embedded.events;
+    context.commit("SET_RESULTS", events);
   },
   getKeyword(context, payload) {
     return context.commit("SET_KEYWORD", payload);

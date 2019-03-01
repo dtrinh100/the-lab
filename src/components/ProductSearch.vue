@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "ProductSearch",
@@ -40,8 +40,8 @@ export default {
     })
   },
   methods: {
-    ...mapMutations("search", ["SET_KEYWORD"]),
-    handleSubmit: async function() {
+    ...mapActions("search", ["getKeyword"]),
+    handleSubmit: function() {
       this.$router.push({ path: "about", query: { keyword: this.keyword } });
     },
     updateParams: function(ev) {

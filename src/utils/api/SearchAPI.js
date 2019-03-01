@@ -5,9 +5,13 @@ const API = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${
 }`;
 export default {
   async getSearch(params) {
-    const response = await axios.get(API, {
-      params
-    });
+    const response = await axios
+      .get(API, {
+        params
+      })
+      .catch(e => {
+        throw Error(e);
+      });
     return response.data;
   }
 };

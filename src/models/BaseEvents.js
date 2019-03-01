@@ -11,9 +11,15 @@ const BaseEvents = {
     this.genre = "";
     this.subGenre = "";
     if (data.classifications) {
-      this.segment = data.classifications[0].segment.name;
-      this.genre = data.classifications[0].genre.name;
-      this.subGenre = data.classifications[0].genre.name;
+      if (data.classifications[0].segment) {
+        this.segment = data.classifications[0].segment.name;
+      }
+      if (data.classifications[0].genre) {
+        this.genre = data.classifications[0].genre.name;
+      }
+      if (data.classifications[0].subGenre.name) {
+        this.subGenre = data.classifications[0].subGenre.name;
+      }
     }
   }
 };
