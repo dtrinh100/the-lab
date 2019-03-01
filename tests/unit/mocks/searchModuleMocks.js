@@ -1,6 +1,6 @@
 const actions = {
   getKeyword: jest.fn(),
-  getResults: jest.fn()
+  fetchResults: jest.fn()
 };
 
 const mutations = {

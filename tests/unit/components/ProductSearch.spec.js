@@ -1,39 +1,17 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import ProductSearch from "@/components/ProductSearch.vue";
 import Vuex from "vuex";
+import { search, actions } from "../mocks/searchModuleMocks";
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
 describe("ProductSearch", () => {
   let store;
-  let actions;
-  let mutations;
-  let state;
-  let search;
   let wrapper;
   let pushSpy;
 
   beforeEach(() => {
-    actions = {
-      getKeyword: jest.fn()
-    };
-
-    mutations = {
-      SET_KEYWORD: jest.fn()
-    };
-
-    state = {
-      keyword: ""
-    };
-
-    search = {
-      namespaced: true,
-      state,
-      mutations,
-      actions
-    };
-
     store = new Vuex.Store({
       modules: {
         search

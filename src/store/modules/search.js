@@ -25,10 +25,13 @@ const actions = {
       const results = await SearchAPI.getSearch(params).catch(error => {
         reject(error);
       });
+      let events;
       if (results._embedded) {
-        const events = results._embedded.events;
-        resolve(context.commit("SET_RESULTS", events));
+        events = results._embedded.events;
+      } else {
+        events = [];
       }
+      resolve(context.commit("SET_RESULTS", events));
     });
   },
   getKeyword(context, payload) {
