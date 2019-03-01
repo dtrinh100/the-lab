@@ -33,21 +33,21 @@ describe("Search store", () => {
         expect(state.results).toEqual([
           {
             date: "2016-03-06",
-            genre: "Robos",
+            _genre: "Robos",
             id: "wrj233j42o4j2",
             images: ["http://testing.jpg"],
             name: "Robot Dance Party 1",
-            segment: "Sports",
-            subGenre: "Top Dancing Robots"
+            _segment: "Sports",
+            _subGenre: "Top Dancing Robots"
           },
           {
-            date: "",
-            genre: "",
+            date: "TBD",
+            _genre: "",
             id: "etetrefaf",
             images: ["http://testingihi.jpg"],
             name: "Robot Dance Party II",
-            segment: "",
-            subGenre: ""
+            _segment: "",
+            _subGenre: ""
           }
         ]);
       });

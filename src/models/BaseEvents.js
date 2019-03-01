@@ -3,24 +3,33 @@ const BaseEvents = {
     this.name = data.name || "";
     this.id = data.id || "";
     this.images = data.images || [];
-    this.date = "";
-    if (data.dates) {
+    this.date = "TBD";
+    if (data.dates && data.dates.start && data.dates.start.localDate) {
       this.date = data.dates.start.localDate;
     }
-    this.segment = "";
-    this.genre = "";
-    this.subGenre = "";
+    this._segment = "";
+    this._genre = "";
+    this._subGenre = "";
     if (data.classifications) {
       if (data.classifications[0].segment) {
-        this.segment = data.classifications[0].segment.name;
+        this._segment = data.classifications[0].segment.name;
       }
       if (data.classifications[0].genre) {
-        this.genre = data.classifications[0].genre.name;
+        this._genre = data.classifications[0].genre.name;
       }
       if (data.classifications[0].subGenre.name) {
-        this.subGenre = data.classifications[0].subGenre.name;
+        this._subGenre = data.classifications[0].subGenre.name;
       }
     }
+  },
+  get segment() {
+    return this._segment.toUpperCase();
+  },
+  get genre() {
+    return this._genre.toUpperCase();
+  },
+  get subGenre() {
+    return this._subGenre.toUpperCase();
   }
 };
 
