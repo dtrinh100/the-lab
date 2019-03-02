@@ -11,7 +11,7 @@ Unit tests for included for each smart component, VueX modules, and models to te
 
 ## Configuration
 
-To run this code, please go over to [Ticketmaster's website](https://developer.ticketmaster.com/) and register for an account to get your API key. After getting your API key, refer to the `sample.env.local` file to create your own `.env.local` file (note your own file name should not have the word sample in it).
+To run this code, please go over to [Ticketmaster's website](https://developer.ticketmaster.com/) and register for an account to get your API key. After getting your API key, refer to the `sample.env.local` file to create your own `.env.local` file (note your own file name should not have the word _sample_ in it).
 
 ## Project setup
 
