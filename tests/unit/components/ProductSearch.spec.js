@@ -33,6 +33,9 @@ describe("ProductSearch", () => {
       mocks: {
         $router: {
           push: pushSpy
+        },
+        $route: {
+          path: "/search"
         }
       }
     });
@@ -62,16 +65,6 @@ describe("ProductSearch", () => {
         path: "search",
         query: { keyword: "" }
       });
-    });
-    it("should clear the value when the reset prop is set to true", () => {
-      const input = wrapper.find("input");
-      input.element.value = "testing";
-
-      expect(wrapper.find("input").element.value).toEqual("testing");
-
-      wrapper.setProps({ reset: true });
-
-      expect(wrapper.find("input").element.value).toEqual("");
     });
   });
 });

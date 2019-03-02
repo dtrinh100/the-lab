@@ -1,7 +1,6 @@
 <template>
   <div class="search-bar">
     <input
-      ref="input"
       :value="keyword"
       @input="updateParams"
       @keyup.enter="handleSubmit"
@@ -21,11 +20,6 @@ import { mapState, mapActions } from "vuex";
 
 export default {
   name: "ProductSearch",
-  mounted: function() {
-    if (this.reset) {
-      this.$refs.input.setAttribute("value", "");
-    }
-  },
   props: {
     // If reset is true, reset the input value
     reset: {
@@ -38,6 +32,16 @@ export default {
     ...mapState({
       keyword: state => state.search.keyword
     })
+  },
+  watch: {
+    $route: {
+      handler: function() {
+        if (this.reset) {
+          this.getKeyword("");
+        }
+      },
+      immediate: true
+    }
   },
   methods: {
     ...mapActions("search", ["getKeyword"]),

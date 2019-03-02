@@ -6,10 +6,11 @@
 :root {
   --background-color: #ffffff;
   --secondary-color: #003087;
+  margin: 0;
+  padding: 0;
 }
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "BogleWeb Regular", Arial, sans-serif;
@@ -19,6 +20,7 @@ body {
 h1,
 h2,
 h3 {
+  margin: 0;
   font-family: "BogleWeb Bold", Arial, sans-serif;
   font-weight: bold;
   font-style: normal;

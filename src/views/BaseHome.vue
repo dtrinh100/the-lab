@@ -22,7 +22,6 @@ export default {
     fixed;
   background-size: cover;
   display: grid;
-  height: 100%;
   justify-content: center;
   align-content: center;
 }
