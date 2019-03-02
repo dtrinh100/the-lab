@@ -9,13 +9,13 @@ const state = {
 
 const mutations = {
   SET_RESULTS(state, payload) {
-    const data = [];
-    payload.forEach(result => {
+    const results = payload.map(result => {
       const event = Object.create(BaseEvents);
       event.populate(result);
-      data.push(event);
+      return event;
     });
-    state.results = data;
+
+    state.results = results;
 
     if (state.results.length === 0) {
       state.noResults = true;

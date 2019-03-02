@@ -75,11 +75,7 @@ export default {
 @media only screen and (min-width: 660px) {
   .search-bar__input {
     width: 20rem;
-    height: 3.2rem;
     font-size: 1.2rem;
-  }
-  .search-bar__button {
-    height: 3.3rem;
   }
 }
 </style>
