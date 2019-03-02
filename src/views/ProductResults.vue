@@ -1,18 +1,27 @@
 <template>
-  <div>Testing</div>
+  <BaseProductResults
+    :keyword="keyword"
+    :results="results"
+    :loading="loading"
+    :error="error"
+    :noResults="noResults"
+  />
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
+import BaseProductResults from "@/components/BaseProductResults.vue";
 
 export default {
   name: "ProductResults",
+  components: {
+    BaseProductResults
+  },
   data() {
     return {
-      loading: true,
+      loading: false,
       error: false,
-      size: 10,
-      noResults: false
+      size: 10
     };
   },
   created: function() {
@@ -27,12 +36,15 @@ export default {
     // Mapping our states based off of the Search store
     ...mapState({
       keyword: state => state.search.keyword,
-      results: state => state.search.results
+      results: state => state.search.results,
+      noResults: state => state.search.noResults
     })
   },
   methods: {
     ...mapActions("search", ["fetchResults", "getKeyword"]),
     fetchData: async function(keyword) {
+      this.loading = true;
+
       // store the keyword in Vuex
       this.getKeyword(keyword);
 
@@ -46,10 +58,6 @@ export default {
         this.error = true;
         console.log(e);
       });
-
-      if (this.results.length < 1) {
-        this.noResults = true;
-      }
 
       this.loading = false;
     }

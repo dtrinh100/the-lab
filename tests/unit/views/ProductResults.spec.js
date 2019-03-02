@@ -9,8 +9,9 @@ localVue.use(Vuex);
 
 describe("ProductResults", () => {
   let store;
-
+  let fetchData;
   beforeEach(() => {
+    fetchData = jest.fn();
     store = new Vuex.Store({
       modules: {
         search
@@ -19,7 +20,6 @@ describe("ProductResults", () => {
   });
 
   it("should call fetchData when created", async () => {
-    let fetchData = jest.fn();
     shallowMount(ProductResults, {
       computed: {
         keyword: () => "",
@@ -43,7 +43,6 @@ describe("ProductResults", () => {
   });
 
   it("should call fetchData when the URL gets updated", () => {
-    let fetchData = jest.fn();
     const wrapper = shallowMount(ProductResults, {
       computed: {
         keyword: () => "",

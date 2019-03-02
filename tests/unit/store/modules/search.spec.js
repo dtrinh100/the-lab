@@ -56,6 +56,15 @@ describe("Search store", () => {
             _subGenre: ""
           }
         ]);
+        expect(state.noResults).toEqual(false);
+      });
+      it("should update set the noResults state to true if there are no results", () => {
+        const state = {
+          results: []
+        };
+
+        search.mutations.SET_RESULTS(state, []);
+        expect(state.noResults).toEqual(true);
       });
     });
   });

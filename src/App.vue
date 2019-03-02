@@ -4,6 +4,7 @@
 
 <style>
 :root {
+  --background-color: #ffffff;
   --secondary-color: #003087;
 }
 html,

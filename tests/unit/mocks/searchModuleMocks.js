@@ -10,7 +10,8 @@ const mutations = {
 
 const state = {
   keyword: "",
-  results: []
+  results: [],
+  noResults: false
 };
 
 const search = {

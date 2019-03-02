@@ -3,16 +3,26 @@ import BaseEvents from "@/models/BaseEvents";
 
 const state = {
   results: [],
-  keyword: ""
+  keyword: "",
+  noResults: false
 };
 
 const mutations = {
   SET_RESULTS(state, payload) {
+    const data = [];
     payload.forEach(result => {
       const event = Object.create(BaseEvents);
       event.populate(result);
-      state.results.push(event);
+      data.push(event);
     });
+    state.results = data;
+
+    if (state.results.length === 0) {
+      state.noResults = true;
+      return;
+    } else {
+      state.noResults = false;
+    }
   },
   SET_KEYWORD(state, payload) {
     state.keyword = payload;
