@@ -21,18 +21,19 @@ const mutations = {
 
 const actions = {
   async fetchResults(context, params) {
-    return new Promise(async (resolve, reject) => {
-      const results = await SearchAPI.getSearch(params).catch(error => {
-        reject(error);
+    return SearchAPI.getSearch(params)
+      .then(results => {
+        let events;
+        if (results._embedded) {
+          events = results._embedded.events;
+        } else {
+          events = [];
+        }
+        context.commit("SET_RESULTS", events);
+      })
+      .catch(e => {
+        throw Error(e);
       });
-      let events;
-      if (results._embedded) {
-        events = results._embedded.events;
-      } else {
-        events = [];
-      }
-      resolve(context.commit("SET_RESULTS", events));
-    });
   },
   getKeyword(context, payload) {
     return context.commit("SET_KEYWORD", payload);

@@ -92,7 +92,7 @@ describe("Search store", () => {
         mockError = true;
 
         await expect(
-          search.actions.fetchResults({ commit }, {})
+          search.actions.fetchResults({ commit }, { keyword: "testing" })
         ).rejects.toThrow();
       });
     });
