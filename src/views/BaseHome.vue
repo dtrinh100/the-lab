@@ -2,7 +2,7 @@
   <main class="labs-homepage" role="img" aria-label="Picture of a toy">
     <div class="search-container">
       <h1 class="search-container__header">Search The Labs</h1>
-      <ProductSearch :reset="true" />
+      <ProductSearch :reset="true"/>
     </div>
   </main>
 </template>
@@ -43,6 +43,7 @@ export default {
   .labs-homepage {
     background: url(../assets/img/home-bg.jpg) no-repeat center center fixed;
     background-size: cover;
+    height: 100vh;
   }
   .search-container {
     width: 40rem;
