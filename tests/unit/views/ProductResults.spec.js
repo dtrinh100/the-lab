@@ -38,17 +38,17 @@ describe("ProductResults", () => {
       store,
       localVue
     });
-    expect(fetchData).toHaveBeenCalled();
+    expect(fetchData).toHaveBeenCalledWith("testing");
+    expect(fetchData).toHaveBeenCalledTimes(1);
   });
 
   it("should call fetchData when the URL gets updated", () => {
     let fetchData = jest.fn();
-    shallowMount(ProductResults, {
+    const wrapper = shallowMount(ProductResults, {
       computed: {
         keyword: () => "",
         results: () => []
       },
-
       mocks: {
         $route: {
           query: {
@@ -56,11 +56,23 @@ describe("ProductResults", () => {
           }
         }
       },
+      methods: {
+        fetchData
+      },
       store,
       localVue
     });
 
-    expect(fetchData).toHaveBeenCalled();
+    wrapper.setData({
+      $route: {
+        query: {
+          keyword: "cool"
+        }
+      }
+    });
+
+    expect(fetchData).toHaveBeenCalledWith("cool");
+    expect(fetchData).toHaveBeenCalledTimes(2);
   });
 
   it("should set the right error and loading states after fetchData is called", async () => {
