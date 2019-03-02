@@ -17,7 +17,7 @@ const BaseEvents = {
       if (data.classifications[0].genre) {
         this._genre = data.classifications[0].genre.name;
       }
-      if (data.classifications[0].subGenre.name) {
+      if (data.classifications[0].subGenre) {
         this._subGenre = data.classifications[0].subGenre.name;
       }
     }

@@ -68,7 +68,6 @@ export default {
   margin: 0;
 }
 .labs-product-results__header {
-  color: var(--secondary-color);
   text-align: center;
 }
 
@@ -85,8 +84,6 @@ export default {
 }
 
 .message-container__message {
-  font-weight: 600;
-  font-family: "BogleWeb Bold", Arial, sans-serif;
   font-size: 3rem;
 }
 </style>

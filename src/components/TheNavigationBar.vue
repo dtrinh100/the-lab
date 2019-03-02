@@ -15,9 +15,8 @@ export default {
 </script>
 <style scoped>
 .labs-navigation {
-  background-color: white;
+  background-color: #f2bb28;
   width: 100%;
   height: 4rem;
-  border-bottom: 1px solid #696969;
 }
 </style>

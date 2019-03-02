@@ -58,7 +58,7 @@ export default {
         this.error = true;
         console.log(e);
       });
-
+      this.error = false;
       this.loading = false;
     }
   }
