@@ -1,5 +1,5 @@
 <template>
-  <div class="base-card">
+  <section class="base-card">
     <div class="base-card__image-container">
       <router-link
         class="base-card__link"
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -70,11 +70,12 @@ export default {
       let image = null;
       const images = this.result.images;
       if (images.length) {
-        image = images.filter(image => {
+        const data = images.filter(image => {
           return image.height === this.imageHeight;
         });
+        image = Object.assign({}, data[0]);
       }
-      return image[0];
+      return image;
     }
   },
   methods: {

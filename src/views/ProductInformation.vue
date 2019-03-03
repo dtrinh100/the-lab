@@ -12,7 +12,6 @@ export default {
     return {
       loading: false,
       error: false,
-      eventRequest: null,
       result: null
     };
   },
@@ -37,24 +36,22 @@ export default {
         apikey: process.env.VUE_APP_KEY
       };
 
-      this.eventRequest = eventsAPI.getEvent(id, params);
+      try {
+        const data = await eventsAPI.getEvent(id, params);
+        this.loading = false;
 
-      const data = await this.eventRequest.catch(err => {
+        this.parseData(data);
+      } catch (err) {
         this.loading = false;
         this.error = true;
         console.log(err);
-      });
-
-      this.loading = false;
-
-      this.parseData(data);
+      }
     },
     parseData: function(data) {
       const event = Object.create(BaseEvents);
       event.populate(data);
 
       this.result = event;
-      console.log(this.result);
     }
   }
 };

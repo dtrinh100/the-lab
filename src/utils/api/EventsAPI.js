@@ -9,7 +9,7 @@ export default {
           params
         })
         .then(response => resolve(response.data))
-        .catch(e => reject(e));
+        .catch(e => reject(Error(e)));
     });
   }
 };

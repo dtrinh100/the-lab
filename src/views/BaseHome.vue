@@ -1,9 +1,9 @@
 <template>
   <main class="labs-homepage" role="img" aria-label="Picture of a toy">
-    <div class="search-container">
+    <section class="search-container">
       <h1 class="search-container__header">Search The Labs</h1>
       <ProductSearch :reset="true" />
-    </div>
+    </section>
   </main>
 </template>
 
@@ -47,6 +47,9 @@ export default {
   }
   .search-container {
     width: 40rem;
+  }
+  .search-container__header {
+    font-size: 2.5rem;
   }
 }
 </style>
