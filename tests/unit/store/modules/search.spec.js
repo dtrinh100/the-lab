@@ -44,7 +44,8 @@ describe("Search store", () => {
             images: ["http://testing.jpg"],
             name: "Robot Dance Party 1",
             _segment: "Sports",
-            _subGenre: "Top Dancing Robots"
+            _subGenre: "Top Dancing Robots",
+            pleaseNote: "I like pugs"
           },
           {
             date: "TBD",
@@ -52,6 +53,8 @@ describe("Search store", () => {
             id: "etetrefaf",
             images: ["http://testingihi.jpg"],
             name: "Robot Dance Party II",
+            pleaseNote:
+              "There are currently no important annoucements at this time.",
             _segment: "",
             _subGenre: ""
           }

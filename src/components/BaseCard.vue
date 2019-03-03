@@ -30,9 +30,15 @@
         class="base-card__classifications"
         v-if="result.genre || result.subGenre || result.segment"
       >
-        <div class="base-card__segment">Segment: {{ result.segment }}</div>
-        <div class="base-card__genre">Genre: {{ result.genre }}</div>
-        <div class="base-card__subgenre">Sub-Genre: {{ result.subGenre }}</div>
+        <div v-if="result.segment" class="base-card__segment">
+          Segment: {{ result.segment }}
+        </div>
+        <div v-if="result.genre" class="base-card__genre">
+          Genre: {{ result.genre }}
+        </div>
+        <div v-if="result.subGenre" class="base-card__subgenre">
+          Sub-Genre: {{ result.subGenre }}
+        </div>
         &nbsp;
       </div>
     </div>
@@ -88,8 +94,8 @@ export default {
   height: auto;
   margin-bottom: 2rem;
   width: 20rem;
-  border-top: 2px solid #eff0f1;
-  border-bottom: 2px solid #eff0f1;
+  border-top: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
   padding: 0.8rem 0;
   display: flex;
   justify-content: center;
@@ -151,7 +157,7 @@ export default {
     font-size: 1rem;
   }
   .base-card__classifications {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 </style>

@@ -10,6 +10,7 @@ const mockResults = {
             localDate: "2016-03-06"
           }
         },
+        pleaseNote: "I like pugs",
         classifications: [
           {
             segment: {

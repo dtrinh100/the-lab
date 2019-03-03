@@ -19,7 +19,6 @@ const mutations = {
 
     if (state.results.length === 0) {
       state.noResults = true;
-      return;
     } else {
       state.noResults = false;
     }
