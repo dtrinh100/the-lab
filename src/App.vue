@@ -5,7 +5,9 @@
 <style>
 :root {
   --background-color: #ffffff;
+  --primary-color: #f2bb28;
   --secondary-color: #003087;
+  --secondary-color-two: #6cace4;
   margin: 0;
   padding: 0;
 }

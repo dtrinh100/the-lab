@@ -7,6 +7,9 @@ const BaseEvents = {
     if (data.dates && data.dates.start && data.dates.start.localDate) {
       this.date = data.dates.start.localDate;
     }
+    this.pleaseNote =
+      data.pleaseNote ||
+      "There are currently no important annoucements at this time.";
     this._segment = "";
     this._genre = "";
     this._subGenre = "";

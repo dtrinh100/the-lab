@@ -16,6 +16,12 @@ export default new Router({
       name: "search",
       component: () =>
         import(/* webpackChunkName: "search" */ "@/views/ProductResults.vue")
+    },
+    {
+      path: "/event/:eventId",
+      name: "event",
+      component: () =>
+        import(/* webpackChunkName: "search" */ "@/views/ProductInformation.vue")
     }
   ]
 });

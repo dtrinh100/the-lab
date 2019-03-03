@@ -71,9 +71,11 @@ export default {
   background-color: var(--background-color);
   margin: 0;
 }
+
 .results-header {
   margin-top: 5rem;
 }
+
 .results-header__text {
   text-align: center;
   margin-bottom: 1rem;
@@ -92,7 +94,7 @@ export default {
 }
 
 .message-container__message {
-  font-size: 3rem;
+  font-size: 1.2rem;
 }
 
 .results-container {
@@ -100,5 +102,11 @@ export default {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .message-container__message {
+    font-size: 3rem;
+  }
 }
 </style>
