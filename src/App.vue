@@ -10,6 +10,7 @@
   --secondary-color-two: #6cace4;
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 html,
 body {

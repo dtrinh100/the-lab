@@ -60,6 +60,7 @@ export default {
   align-items: center;
 }
 .search-bar__input {
+  -webkit-appearance: none; /* Forces Chrome and Safari to honor the height style */
   height: 2.5rem;
   width: 12rem;
   padding-left: 0.5rem;

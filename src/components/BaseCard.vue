@@ -9,13 +9,14 @@
           class="base-card__image"
           v-if="image"
           :src="image.url"
-          :alt="image.alt"
+          :alt="result.name"
         />
       </router-link>
     </div>
     <div class="base-card__content">
       <h2 class="base-card__title">
         <router-link
+          tabindex="0"
           class="base-card__link"
           :to="{ name: 'event', params: { eventId: result.id } }"
           >{{ result.name }}</router-link
@@ -39,7 +40,6 @@
         <div v-if="result.subGenre" class="base-card__subgenre">
           Sub-Genre: {{ result.subGenre }}
         </div>
-        &nbsp;
       </div>
     </div>
   </div>
