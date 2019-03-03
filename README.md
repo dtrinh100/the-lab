@@ -4,7 +4,7 @@ The Labs is an application that features the usage of Ticketmaster's APIs. It al
 
 ## Project structure overview
 
-All of the code is layout in a way that follows current best practices. There following best practices are utilized:
+All of the code is layout in a way that follows current best practices. The following best practices are utilized:
 
 - Vuex is used to passed around shared props for smart componenets.
 - Models are used to format the code returned from the API.
@@ -15,8 +15,7 @@ All of the code is layout in a way that follows current best practices. There fo
 - Code is linted and uses Prettier for formatting
 - Variables and functions names are self documenting
 - Add comments where there may be some complex logic
-
-Unit tests for included for each smart component, VueX modules, and models to test their logic. Some UI unit tests are included as well for presentational components.
+- Unit tests for included for each smart component, VueX modules, and models to test their logic. Some UI unit tests are included as well for presentational components.
 
 ## Configuration
 
