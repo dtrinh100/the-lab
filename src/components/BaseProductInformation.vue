@@ -212,5 +212,17 @@ export default {
   .product-info__classifications {
     font-size: 1rem;
   }
+
+  .product-info__segment {
+    padding: 0.5rem;
+  }
+
+  .product-info__genre {
+    padding: 0.5rem;
+  }
+
+  .product-info__subgenre {
+    padding: 0.5rem;
+  }
 }
 </style>

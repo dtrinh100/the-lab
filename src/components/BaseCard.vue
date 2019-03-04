@@ -110,12 +110,16 @@ export default {
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 .base-card__link {
   color: black;
   text-decoration: none;
 }
 .base-card__link:hover {
+  color: var(--primary-color);
+}
+.base-card__link:focus {
   color: var(--primary-color);
 }
 .base-card__classifications {

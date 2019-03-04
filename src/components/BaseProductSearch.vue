@@ -44,6 +44,8 @@ export default {
   width: 12rem;
   padding-left: 0.5rem;
   font-size: 1rem;
+  border-radius: 25px 0 0 25px;
+  border: 1px solid white;
 }
 .search-bar__button {
   height: 2.5rem;
