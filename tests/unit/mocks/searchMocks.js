@@ -23,7 +23,15 @@ const mockResults = {
               name: "Top Dancing Robots"
             }
           }
-        ]
+        ],
+        _embedded: {
+          attractions: [
+            {
+              name: "Massive Robot Dance Party",
+              images: ["http://tesjijingihi.jpg"]
+            }
+          ]
+        }
       },
       {
         name: "Robot Dance Party II",

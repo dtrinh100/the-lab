@@ -24,6 +24,10 @@ const BaseEvents = {
         this._subGenre = data.classifications[0].subGenre.name;
       }
     }
+    this.attractions =
+      data._embedded && data._embedded.attractions
+        ? data._embedded.attractions
+        : [];
   },
   get segment() {
     return this._segment.toUpperCase();

@@ -41,7 +41,7 @@ export default {
   methods: {
     ...mapActions("search", ["getKeyword"]),
     handleSubmit: function() {
-      this.$router.push({ path: "search", query: { keyword: this.keyword } });
+      this.$router.push({ path: "/search", query: { keyword: this.keyword } });
     },
     updateParams: function(value) {
       this.getKeyword(value);

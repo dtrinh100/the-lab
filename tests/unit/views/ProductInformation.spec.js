@@ -93,6 +93,12 @@ describe("ProductInformation", () => {
       _genre: "Robos",
       _segment: "Sports",
       _subGenre: "Top Dancing Robots",
+      attractions: [
+        {
+          images: ["http://tesjijingihi.jpg"],
+          name: "Massive Robot Dance Party"
+        }
+      ],
       date: "2016-03-06",
       id: "wrj233j42o4j2",
       images: ["http://testing.jpg"],

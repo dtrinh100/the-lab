@@ -53,7 +53,7 @@ describe("ProductSearch", () => {
       button.trigger("click");
 
       expect(pushSpy).toBeCalledWith({
-        path: "search",
+        path: "/search",
         query: { keyword: "" }
       });
     });

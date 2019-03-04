@@ -10,8 +10,8 @@
         <div class="image-container">
           <img
             class="image-container__image"
-            v-if="image"
-            :src="image.url"
+            v-if="mainImage"
+            :src="mainImage.url"
             :alt="result.name"
           />
         </div>
@@ -40,12 +40,34 @@
           </div>
         </div>
       </div>
+      <section class="product-attractions">
+        <h2 class="product-attractions__title">Event Attractions</h2>
+        <div
+          class="product-attractions__container"
+          v-if="result.attractions.length"
+        >
+          <BaseAttraction
+            v-for="attraction in result.attractions"
+            :key="attraction.id"
+            :result="attraction"
+          />
+        </div>
+        <div
+          class="product-attractions__message"
+          v-if="!result.attractions.length"
+        >
+          No attractions information for this event.
+        </div>
+      </section>
     </section>
   </main>
 </template>
 
 <script>
 import NavigationBar from "@/components/TheNavigationBar";
+import imageHelper from "@/utils/imageHelper";
+import BaseAttraction from "./BaseAttraction";
+
 export default {
   name: "BaseProductInformation",
   mounted: function() {
@@ -53,7 +75,8 @@ export default {
     window.addEventListener("resize", this.handleResize);
   },
   components: {
-    NavigationBar
+    NavigationBar,
+    BaseAttraction
   },
   props: {
     result: {
@@ -71,21 +94,16 @@ export default {
   },
   data() {
     return {
-      imageHeight: 0
+      mainImageHeight: 0
     };
   },
   computed: {
-    // Creates an image property based on the imageHeight data. It filters the array of images to find
-    // an image that matches the imageHeight data, then returns an object representing that image.
-    image: function() {
+    mainImage: function() {
       let image = null;
       if (this.result) {
         const images = this.result.images;
         if (images.length) {
-          const data = images.filter(image => {
-            return image.height === this.imageHeight;
-          });
-          image = Object.assign({}, data[0]);
+          image = imageHelper(images, this.mainImageHeight);
         }
       }
       return image;
@@ -108,9 +126,9 @@ export default {
     async handleResize() {
       await this.$nextTick();
       if (window.innerWidth < 1000) {
-        this.imageHeight = 203;
+        this.mainImageHeight = 203;
       } else {
-        this.imageHeight = 360;
+        this.mainImageHeight = 360;
       }
     }
   }
@@ -120,6 +138,7 @@ export default {
 .base-product-information {
   background-color: var(--background-color);
   margin: 0;
+  padding-bottom: 2rem;
 }
 
 .message-container {
@@ -186,6 +205,20 @@ export default {
   padding: 0.2rem;
 }
 
+.product-attractions {
+  margin-top: 2rem;
+}
+
+.product-attractions__title {
+  font-size: 1.3rem;
+}
+
+.product-attractions__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media only screen and (min-width: 660px) {
   .product-content {
     margin-top: 8rem;
@@ -223,6 +256,18 @@ export default {
 
   .product-info__subgenre {
     padding: 0.5rem;
+  }
+
+  .product-attractions__title {
+    font-size: 1.9rem;
+  }
+
+  .product-attractions__container {
+    flex-direction: row;
+  }
+  .product-attractions__message {
+    height: 10rem;
+    font-size: 1.2rem;
   }
 }
 </style>

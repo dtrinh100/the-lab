@@ -38,25 +38,32 @@ describe("Search store", () => {
 
         expect(state.results).toEqual([
           {
-            date: "2016-03-06",
             _genre: "Robos",
+            _segment: "Sports",
+            _subGenre: "Top Dancing Robots",
+            attractions: [
+              {
+                images: ["http://tesjijingihi.jpg"],
+                name: "Massive Robot Dance Party"
+              }
+            ],
+            date: "2016-03-06",
             id: "wrj233j42o4j2",
             images: ["http://testing.jpg"],
             name: "Robot Dance Party 1",
-            _segment: "Sports",
-            _subGenre: "Top Dancing Robots",
             pleaseNote: "I like pugs"
           },
           {
-            date: "TBD",
             _genre: "",
+            _segment: "",
+            _subGenre: "",
+            attractions: [],
+            date: "TBD",
             id: "etetrefaf",
             images: ["http://testingihi.jpg"],
             name: "Robot Dance Party II",
             pleaseNote:
-              "There are currently no important annoucements at this time.",
-            _segment: "",
-            _subGenre: ""
+              "There are currently no important annoucements at this time."
           }
         ]);
         expect(state.noResults).toEqual(false);

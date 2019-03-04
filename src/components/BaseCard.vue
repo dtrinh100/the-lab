@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import imageHelper from "@/utils/imageHelper";
+
 export default {
   name: "BaseCard",
   mounted: function() {
@@ -68,12 +70,11 @@ export default {
     // an image that matches the imageHeight data, then returns an object representing that image.
     image: function() {
       let image = null;
-      const images = this.result.images;
-      if (images.length) {
-        const data = images.filter(image => {
-          return image.height === this.imageHeight;
-        });
-        image = Object.assign({}, data[0]);
+      if (this.result) {
+        const images = this.result.images;
+        if (images.length) {
+          image = imageHelper(images, this.imageHeight);
+        }
       }
       return image;
     }
