@@ -2,6 +2,12 @@
 
 The Labs is an application that features the usage of Ticketmaster's APIs. It allows the users to search for an event and get more information on the event via Ticketmaster's events APIs.
 
+## Technology Stack
+
+- HTML5
+- CSS3 (no frameworks)
+- Javascript (with the Vue/VueX stack)
+
 ## Project structure overview
 
 All of the code is layout in a way that follows current best practices. The following best practices are utilized:
