@@ -1,10 +1,11 @@
 <template>
-  <div>Testing</div>
+  <BaseProductInformation :result="result" :loading="loading" :error="error" />
 </template>
 
 <script>
 import eventsAPI from "@/utils/api/EventsAPI";
 import BaseEvents from "@/models/BaseEvents";
+import BaseProductInformation from "@/components/BaseProductInformation";
 
 export default {
   name: "ProductInformation",
@@ -12,8 +13,11 @@ export default {
     return {
       loading: false,
       error: false,
-      result: null
+      result: {}
     };
+  },
+  components: {
+    BaseProductInformation
   },
   created: function() {
     this.fetchData(this.$route.params.eventId);

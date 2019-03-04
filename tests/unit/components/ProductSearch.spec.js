@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from "@vue/test-utils";
+import { mount, createLocalVue } from "@vue/test-utils";
 import ProductSearch from "@/components/ProductSearch.vue";
 import Vuex from "vuex";
 import { search, actions } from "../mocks/searchModuleMocks";
@@ -20,7 +20,7 @@ describe("ProductSearch", () => {
 
     pushSpy = jest.fn();
 
-    wrapper = shallowMount(ProductSearch, {
+    wrapper = mount(ProductSearch, {
       propsData: {
         reset: false
       },
@@ -38,15 +38,6 @@ describe("ProductSearch", () => {
           path: "/search"
         }
       }
-    });
-  });
-
-  describe("ProductSearch User Interface", () => {
-    it("has an input field for searching", () => {
-      expect(wrapper.contains("input")).toBe(true);
-    });
-    it("has an button for searching", () => {
-      expect(wrapper.contains("button")).toBe(true);
     });
   });
   describe("ProductSearch functions", () => {
