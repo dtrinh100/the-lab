@@ -1,6 +1,6 @@
 <template>
   <main class="base-product-information">
-    <NavigationBar/>
+    <NavigationBar />
     <section class="message-container" v-show="message">
       <div class="message-container__message">{{ message }}</div>
     </section>
@@ -8,7 +8,12 @@
       <h1 class="product-content__title">{{ result.name }}</h1>
       <div class="product-content__container">
         <div class="image-container">
-          <img class="image-container__image" v-if="image" :src="image.url" :alt="result.name">
+          <img
+            class="image-container__image"
+            v-if="image"
+            :src="image.url"
+            :alt="result.name"
+          />
         </div>
         <div class="product-info">
           <div class="product-info__date" v-if="result.date">
@@ -23,12 +28,15 @@
             class="product-info__classifications"
             v-if="result.genre || result.subGenre || result.segment"
           >
-            <div v-if="result.segment" class="product-info__segment">Segment: {{ result.segment }}</div>
-            <div v-if="result.genre" class="product-info__genre">Genre: {{ result.genre }}</div>
-            <div
-              v-if="result.subGenre"
-              class="product-info__subgenre"
-            >Sub-Genre: {{ result.subGenre }}</div>
+            <div v-if="result.segment" class="product-info__segment">
+              Segment: {{ result.segment }}
+            </div>
+            <div v-if="result.genre" class="product-info__genre">
+              Genre: {{ result.genre }}
+            </div>
+            <div v-if="result.subGenre" class="product-info__subgenre">
+              Sub-Genre: {{ result.subGenre }}
+            </div>
           </div>
         </div>
       </div>
