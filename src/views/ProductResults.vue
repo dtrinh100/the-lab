@@ -52,14 +52,15 @@ export default {
         keyword: this.keyword,
         size: this.size
       };
-
-      await this.fetchResults(params).catch(e => {
+      try {
+        await this.fetchResults(params);
+        this.error = false;
+        this.loading = false;
+      } catch (e) {
         this.loading = false;
         this.error = true;
         console.log(e);
-      });
-      this.error = false;
-      this.loading = false;
+      }
     }
   }
 };
